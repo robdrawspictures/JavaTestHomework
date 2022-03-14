@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class BottleTest {
 
-    Bottle bottle = new Bottle(100);
+    Bottle bottle = new Bottle();
 
     @Test
     public void canDrink(){
@@ -23,5 +23,12 @@ public class BottleTest {
         bottle.emptyBottle();
         bottle.fillBottle(50);
         assertEquals(50, bottle.volume);
+    }
+
+    @Test
+    public void cantOverfill(){
+        bottle.emptyBottle();
+        bottle.fillBottle(150);
+        assertEquals(100, bottle.volume);
     }
 }

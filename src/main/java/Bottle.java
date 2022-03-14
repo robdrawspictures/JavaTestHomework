@@ -2,8 +2,8 @@ public class Bottle {
 
     public int volume;
 
-    public Bottle(int volume){
-        this.volume = volume;
+    public Bottle(){
+        this.volume = 100;
     }
 
     public void takeDrink(){
@@ -15,6 +15,10 @@ public class Bottle {
     }
 
     public void fillBottle(int amount){
-        volume += amount;
+        if(amount > 100){
+            volume = 100;
+        } else {
+            volume += amount;
+        }
     }
 }
